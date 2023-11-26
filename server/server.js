@@ -7,6 +7,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import passport from "passport";
 import session from "express-session";
+import path from "path"
 
 mongoose.connect(process.env.MONGO_URL).then(() => console.log("Connected!")).catch((err)=>console.error(err.message))
 import authRouter from "./routes/auth.js";
@@ -30,6 +31,7 @@ app.use(express.json({ limit: "200mb" }));
 app.use(
   express.urlencoded({ limit: "200mb", extended: true, parameterLimit: 50000 })
 );
+app.use(express.static('static'))
 
 
 app.use((req, res, next) => {
@@ -50,6 +52,10 @@ app.use(express.json());
 app.use("/auth", authRouter);
 app.use("/users", service);
 app.use("/admin", adminRouter);
+
+app.get('*',(req,res)=>{
+   res.sendFile(path.join(__dirname,"static/index.html"))
+})
 
 
 
