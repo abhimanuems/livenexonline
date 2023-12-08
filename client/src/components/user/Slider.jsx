@@ -17,7 +17,7 @@ const Slider = () => {
             <span className="mt-1">
               <BsCameraVideo />
             </span>
-            <span className="ml-2">Home</span>
+            <span className="hidden md:block ml-2">Home</span>
           </button>
         </li>
         <li>
@@ -29,7 +29,7 @@ const Slider = () => {
               <FaTicketSimple />
             </span>
 
-            <span className="ml-2"> Tickets</span>
+            <span className="hidden md:block ml-2"> Tickets</span>
           </button>
         </li>
         <li>
@@ -41,7 +41,7 @@ const Slider = () => {
               <GiUpgrade />
             </span>
 
-            <span className="ml-2"> plans</span>
+            <span className="hidden md:block ml-2"> plans</span>
           </button>
         </li>
         <li>
@@ -53,7 +53,7 @@ const Slider = () => {
               <BsFillShareFill />
             </span>
 
-            <span className="ml-2"> Destinations</span>
+            <span className="hidden md:block ml-2"> Destinations</span>
           </button>
         </li>
       </ul>
